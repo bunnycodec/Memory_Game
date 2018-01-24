@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0px;
+}
+hr{
+    border-top: 3px double #8c8b8b;
+}
+/*************#board **********************/
+#board{
+    background-image: url("Pictures/background.jpg");
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #464646;
+}
+#board li{
+    display: inline-block;
+    margin: 0.5vw;
+    position: relative;
+}
+#board li img{
+    width: 9vh;
+    height: 8vh;
+}
+#startButton{
+    padding: 1vh 3vh;
+    font-size: 2vh;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #e67e22;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    display: inline-block;
+    margin: 0px 0px 0px -400px;
+}
+#startButton:hover {background-color: #d35400}
+#startButton:active {
+    background-color: #d35400;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#time, #yourScore, #clicks{
+    color: white;
+    font-family: monospace;
+    font-size: 2vh;
+    line-height: 3vh;
+}
+#time{
+    margin: -45px 0px 0px -100px;
+}
+#clicks{
+    margin: 0px 0px 50px -100px;
+}
+#yourScore{
+    margin: auto;
+}
+.head h1{
+    color: #1abc9c;
+    font-size: 4.5vh;
+}
+.head h2{
+    color: #16a085;
+    font-size: 2vh;
+    margin-left: 12vh;
+    margin-top: -1vh;
+}
+.tail{
+    margin: 2vh auto 5vh auto;
+}
+#btnEasy, #btnHard, #btnLegend{
+    display:inline-block;
+    position:relative;
+    padding:10px 20px;
+    border:2px solid #fda;
+    color:#fda;
+    font-family:'Dancing Script',serif;
+    font-style:italic;
+    font-size:3vh;
+    text-decoration:none;
+    margin: 3vh 2vh;
+    transition: color 0.4s;
+    width: 20vh;
+}
+#btnEasy:after, #btnHard:after, #btnLegend:after{
+    content:" ";
+    border:2px solid rgba(0,0,0,0);
+    display:inline-block;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    transition:all 0.4s;
+}
+#btnEasy:hover, #btnHard:hover, #btnLegend:hover{
+    color:#eee
+}
+#btnEasy:hover:after, #btnHard:hover:after, #btnLegend:hover:after{  
+    border:2px solid #fda;
+    width: calc(100% - 10px);
+    height: calc(100% + 10px); 
+}
+#totalScore{
+    font-family:'Dancing Script',serif;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    color: aqua;
+    line-height: 6vh;
+}
+#totalScore img{
+    display: block;
+    width: 40vh;
+
+}
+
+
+/**************** About ******************/
+#about{
+    background-image: url("Pictures/about.jpg");
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #464646;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-auto-rows: minmax(400px, auto);
+    grid-gap: 40px;
+    padding: 130px 0px;
+}
+.box1, .box2, .box3{
+    transition: all 1s;
+    perspective: 900px;
+    cursor: pointer;
+}
+.box1{
+    margin-left: 10%;
+}
+.box2{
+    margin-left: 10%;
+}
+.box2 .back{
+    max-width: 300px;
+}
+.box2 img{
+    max-height: 300px;
+    min-height: 300px;
+    border: 2px solid black;
+}
+.box2 p{
+    font-size: 120%;
+    color: black;
+    margin: 12% 0 0 0;
+}
+.box2 p a{
+    font-size: 140%;
+    font-family: 'Kaushan Script', cursive;
+}
+.box3{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.btnFeedback {
+    background-color: rgb(80,0,0);
+    border: 1px solid black;
+    color: aqua;
+    text-align: center;
+    font-size: 2vh;
+    padding: 1vh;
+    width: 16vh;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0% 10%;
+}
+.btnFeedback span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btnFeedback span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.btnFeedback:hover span {
+    padding-right: 2vh;
+}
+.btnFeedback:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.box3 .section1{
+    color: black;
+    font-family: serif;
+    font-size: 2vh;
+}
+.box3 .section2{
+    padding: 2vh;
+}
+#about .box3 .main{
+    position: relative;
+    width: 5vh;
+    height: 5vh;
+    border: 1px solid black;
+    box-shadow: 1vh 1vh 2vh rgba(0,0,0,.3);
+    display: inline-block;
+    margin: 0.2vh;
+}
+.main::before{
+    content: '';
+    width: 0.5vh;
+    height: 100%;
+    background-color: #FB894E;
+    border: 0.1vh solid black;
+    position: absolute;
+    transform: skewY(45deg);
+}
+.main::after{
+    content: '';
+    width: 100%;
+    height: width: 0.5vh;
+    border: 0.1vh solid black;
+    position: absolute;
+    transform: skewX(45deg);
+}
+.imageBox{
+    height: 100%;
+    width: 100%;
+    transition: all .3s;
+}
+.main:hover{
+    cursor: pointer;
+}
+.main:hover .imageBox{
+    border: 2px solid black;
+    transform: translate(-10px,-10px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.front{
+    padding: 150px 0px;
+    text-align: center;
+    border: 2px aqua solid;
+    position: absolute;
+    font-size: 150%;
+    color: aqua;
+    line-height: 1.5em;
+    font-family: 'Kaushan Script', cursive;
+    width: 100%;
+    min-height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve3d;
+    transition: all 1s;
+    background: rgb(80,0,0);
+}
+.back{
+    padding: 1em;
+    border: 2px rgb(80,0,0) solid;
+    position: absolute;
+    font-size: 100%;
+    color: rgb(80,0,0);
+    width: 100%;
+    min-height: 100%;
+    text-align: left;
+    backface-visibility: hidden;
+    transform-style: preserve3d;
+    transition: all 1s;
+    background: aqua;
+    transform: rotateY(-180deg);
+}
+.front:hover{
+    transform: rotateY(20deg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
+}
+.flipped .back {
+    transform: rotateY(0deg);
+    transform: scale(1.1,1.1);
+}
+.flipped .front {
+    transform: rotateY(180deg);
+}
+
+
+/***************** Footer ****************/
+footer{
+    background-color: black;
+    width: 100%;
+    height: 3vw;
+    font-family: Lobster;
+    color: rgb(52, 73, 94);
+    text-align: right;
+    font-size: 1.5vw;
+    padding: 0.5vw 1vw;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+footer a{
+    font-size: 1.5vw;
+    display: inline-block;
+    color: rgb(192, 57, 43);
+}
+footer a:hover, a:active, a:visited, a:link{
+    text-decoration: none;
+    color: rgb(192, 57, 43);
+}
+
+
+
+
+
+/************ Medium Width ***************/
+@media screen and (max-width: 1336px){
+    /************ Navigation ***************/
+    #board img{
+        width: 6vh;
+        height: 5vh;
+    }
+}
+
+/************ Smallest Width ***************/
+@media screen and (max-width: 700px){
+
+    #board img{
+        width: 5vh;
+        height: 4vh;
+    }
+    .head h1{
+        font-size: 3.5vh;
+    }
+    .head h2{
+        font-size: 1.5vh;
+        margin-left: 6vh;
+        margin-top: -1vh;
+    }
+    #btnEasy, #btnHard, #btnLegend{
+        padding:5px 10px;
+        font-size:1.5vh;
+        text-decoration:none;
+        margin: 1vh 1vh 5vh 1vh;
+        transition: color 0.4s;
+        width: 10vh;
+    }
+    .tail{
+        margin: 0vh auto 6vh auto;
+    }
+    #startbtnFeedback{
+        padding: 1vh 3vh;
+        font-size: 1.2vh;
+        margin-left: -250px;
+    }
+    #time, #yourScore, #clicks{
+        font-size: 1.5vh;
+        line-height: 2vh;
+    }
+    #time{
+        margin: -30px 0px 0px -20px;
+    }
+    #clicks{
+        margin: 0px 0px 0px -20px;
+    }
+    #about{
+        grid-template-columns: repeat(6,2fr);
+        grid-auto-rows: minmax(200px, auto);
+        grid-gap: 40px;
+        padding: 60px 0px;
+    }
+    .front{
+        padding: 15% 20%;
+        position: absolute;
+        font-size: 170%;
+        color: aqua;
+        line-height: 1.5em;
+        font-family: 'Kaushan Script', cursive;
+        width: 100%;
+        min-height: 100%;
+        backface-visibility: hidden;
+        transform-style: preserve3d;
+        transition: all 1s;
+    }
+    .back{
+        padding: 1em;
+        border: 2px rgb(80,0,0) solid;
+        position: absolute;
+        font-size: 80%;
+        color: rgb(80,0,0);
+        width: 100%;
+        min-height: 100%;
+        text-align: left;
+        backface-visibility: hidden;
+        transform-style: preserve3d;
+        transition: all 1s;
+        background: aqua;
+        transform: rotateY(-180deg);
+        display: grid;
+        grid-template-columns: repeat(3, 2fr);
+    }
+    .box1{
+        grid-column: 1/6;
+        margin: 0px 5% 0px 10%;
+    }
+    .box1 .section1{
+        grid-column: 1/6;
+    }
+    .box2{
+        grid-column: 1/6;
+        margin: 0px 5% 0px 10%;
+    }
+    .box2 .back{
+        min-width: 400px;
+        padding: 10px 10px 10px 10px;
+    }
+    .box2 img{
+        min-width: 200px;
+        min-height: 180px;
+        border: 2px solid black;
+    }
+    .box2 p{
+        width: 100px;
+        font-size: 120%;
+        color: black;
+        margin: 65% 0 0 30%;
+    }
+    .box2 p a{
+        font-size: 140%;
+        font-family: 'Kaushan Script', cursive;
+    }
+    .box3{
+        grid-column: 1/6;
+        margin: 0px 5% 0px 10%;
+    }
+}
+
+
+
+
+/**************************** MODAL BOX *************************/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: black;
+    color: white;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #2f3640;
+    color: white;
+}
+
+.modal-body {padding: 2vh 6vh;}

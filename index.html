@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Memory Game</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="main.js"></script>
+    </head>
+
+    <body onload="start()">
+
+        <section class="container-fluid text-center" id="board">
+
+            <div class="row head">
+                <h1>Memorize</h1>
+                <h2> Are You Good With Memory? </h2>
+                <div id="btnEasy"> Easy </div>
+                <div id="btnHard"> Moderate </div>                    
+                <div id="btnLegend"> Challenging </div> 
+            </div>
+
+            <div class="row tail">
+                <button id="startButton"> START </button>
+                <p id="time">Time : <span></span></p>
+                <p id="clicks">Clicks : <span>000</span></p>
+                <p id="yourScore"><span></span></p>
+                <div id="easy">
+                    <li class="e00"></li><li class="e01"></li><li class="e02"></li><li class="e03"></li>
+                    <br />
+                    <li class="e04"></li><li class="e05"></li><li class="e06"></li><li class="e07"></li>
+                    <br />
+                    <li class="e08"></li><li class="e09"></li><li class="e10"></li><li class="e11"></li>
+                    <br />
+                    <li class="e12"></li><li class="e13"></li><li class="e14"></li><li class="e15"></li>
+                </div>
+
+                <div id="hard">
+                    <li class="e00"></li><li class="e01"></li><li class="e02"></li><li class="e03"></li><li class="e04"></li><li class="e05"></li>
+                    <br />
+                    <li class="e06"></li><li class="e07"></li><li class="e08"></li><li class="e09"></li><li class="e10"></li><li class="e11"></li>
+                    <br />
+                    <li class="e12"></li><li class="e13"></li><li class="e14"></li><li class="e15"></li><li class="e16"></li><li class="e17"></li>
+                    <br />
+                    <li class="e18"></li><li class="e19"></li><li class="e20"></li><li class="e21"></li><li class="e22"></li><li class="e23"></li>
+                    <br />
+                    <li class="e24"></li><li class="e25"></li><li class="e26"></li><li class="e27"></li><li class="e28"></li><li class="e29"></li>
+                    <br />
+                    <li class="e30"></li><li class="e31"></li><li class="e32"></li><li class="e33"></li><li class="e34"></li><li class="e35"></li>
+                </div>
+
+                <div id="legend">
+                    <li class="e00"></li><li class="e01"></li><li class="e02"></li><li class="e03"></li><li class="e04"></li><li class="e05"></li><li class="e06"></li><li class="e07"></li>
+                    <br />
+                    <li class="e08"></li><li class="e09"></li><li class="e10"></li><li class="e11"></li><li class="e12"></li><li class="e13"></li><li class="e14"></li><li class="e15"></li>
+                    <br />
+                    <li class="e16"></li><li class="e17"></li><li class="e18"></li><li class="e19"></li><li class="e20"></li><li class="e21"></li><li class="e22"></li><li class="e23"></li>
+                    <br />
+                    <li class="e24"></li><li class="e25"></li><li class="e26"></li><li class="e27"></li><li class="e28"></li><li class="e29"></li><li class="e30"></li><li class="e31"></li>
+                    <br />
+                    <li class="e32"></li><li class="e33"></li><li class="e34"></li><li class="e35"></li><li class="e36"></li><li class="e37"></li><li class="e38"></li><li class="e39"></li>
+                    <br />
+                    <li class="e40"></li><li class="e41"></li><li class="e42"></li><li class="e43"></li><li class="e44"></li><li class="e45"></li><li class="e46"></li><li class="e47"></li>
+                    <br />
+                    <li class="e48"></li><li class="e49"></li><li class="e50"></li><li class="e51"></li><li class="e52"></li><li class="e53"></li><li class="e54"></li><li class="e55"></li>
+                    <br />
+                    <li class="e56"></li><li class="e57"></li><li class="e58"></li><li class="e59"></li><li class="e60"></li><li class="e61"></li><li class="e62"></li><li class="e63"></li>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="about">
+            <div class="box1">
+                <div class="front">
+                    About the Game
+                </div>
+                <div class="back">
+                    <div class="section1">
+                        <p>Above you will find some Boxes with similar face. Find out the common figure hidden inside. Well its not that easy when you have a clock rushing and your clicks being counted. Your total score depends on both of these parameters. Enjoy Playing !!</p>
+                    </div>
+                    <div class="section2">
+                        <h2 style="font-family: serif;margin:0.1em 0px;">Easy</h2>
+                        <p>This Level Contains 16 boxes with pictures, that you can remember easily.</p>
+                    </div>
+                    <div class="section3">
+                        <h2 style="font-family: serif;margin:0.1em 0px;">Moderate</h2>
+                        <p>This Level Contains 32 boxes with pictures, that are not easy to remember.</p>
+                    </div>
+                    <div class="section4">
+                        <h2 style="font-family: serif;margin:0.1em 0px;">Challenging</h2>
+                        <p>This Level Contains 64 boxes with many similar types of pictures. Make sure you remember the right picture for the right one.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box2">
+                <div class="front">About the Developer</div>
+                <div class="back">
+                    <div class="section1">
+                        <img src="Pictures/sunny.jpg" class="img-responsive img-rounded" alt="Owner">
+                    </div>
+                    <div class="section2">
+                        <p>
+                            Reach Me @ <a href="https://www.linkedin.com/in/sunny-kumar-340ab112a/" target="_blank">Sunny Kumar</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box3">
+                <div class="front">Feedback & Contacts</div>
+                <div class="back">
+                    <div class="section1">
+                        Kindly Leave a feedback about the Site, if you find any Bug, please mention it.<hr />
+                        <a href="https://docs.google.com/forms/d/18_QwXPjD62enAGYvJac7oTBWv9dbec0TH6mB-wPt_TE/prefill" target="_blank"><button class="btnFeedback" style="vertical-align:middle"><span>Feedback </span></button></a><hr />
+                    </div>
+                    <div class="section2">
+                        <div class="main Facebook">
+                            <a href="https://www.facebook.com/sunny97kumar" target="_blank"><div style="background-color: #3b5999" class="imageBox">
+                                <img src="Pictures/Facebook.png"/>
+                                </div></a>
+                        </div>
+                        <div class="main Gmail">
+                            <a href="https://plus.google.com/u/0/114438114547694899792" target="_blank"><div style="background-color: #dd4b39" class="imageBox">
+                                <img src="Pictures/Google%20Plus.png"/>
+                                </div></a>
+                        </div>
+                        <div class="main Twitter">
+                            <a href="https://twitter.com/aridototofu" target="_blank"><div style="background-color: #55acee" class="imageBox">
+                                <img src="Pictures/Twitter.png"/>
+                                </div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts"></section>
+
+        <footer>
+            Designed & Coded by <a href="https://www.linkedin.com/in/sunny-kumar-340ab112a/" target="_blank">Sunny Kumar</a>
+        </footer>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Note</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Kindly Open this Site on a Larger Screen, to Enjoy a Better View and Proper Positioning</p>
+                    <hr />
+                    <p>Specifically : <br />
+                    Width>950px && Height>850px</p>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('myModal');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
