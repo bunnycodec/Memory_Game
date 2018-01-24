@@ -255,30 +255,6 @@ hr{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .front{
     padding: 150px 0px;
     text-align: center;
@@ -287,7 +263,7 @@ hr{
     font-size: 150%;
     color: aqua;
     line-height: 1.5em;
-    font-family: 'Kaushan Script', cursive;
+    font-family: serif;
     width: 100%;
     min-height: 100%;
     backface-visibility: hidden;
