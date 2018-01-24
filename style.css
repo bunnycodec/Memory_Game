@@ -1,4 +1,4 @@
-//@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 html, body{
     width: 100%;
     height: 100%;
@@ -263,7 +263,7 @@ hr{
     font-size: 150%;
     color: aqua;
     line-height: 1.5em;
-    font-family: serif;
+    font-family: 'Kaushan Script', cursive;
     width: 100%;
     min-height: 100%;
     backface-visibility: hidden;
